@@ -176,10 +176,10 @@ def handle_outbound_call(conn):
     bridge_call(conn)
     
     # 7. 清理连接
-    try:
-        conn.disconnect()
-    except Exception as e:
-        logger.error(f"断开连接时出错: {e}")
+    # try:
+    #     conn.disconnect()
+    # except Exception as e:
+    #     logger.error(f"断开连接时出错: {e}")
 
 
 def main():

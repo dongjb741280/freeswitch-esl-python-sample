@@ -22,7 +22,7 @@
 
 1. **克隆仓库**
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:dongjb741280/freeswitch-esl-python-sample.git
    cd freeswitch-esl-python-sample
    ```
 

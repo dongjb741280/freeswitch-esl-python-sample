@@ -1,9 +1,5 @@
+from freeswitchESL import ESL  # 回退
 
-import time
-try:
-    import ESL  # 官方模块
-except Exception:
-    from freeswitchESL import ESL  # 回退
 
 def on_esl_event(event):
     event_name = event.getHeader("Event-Name")
@@ -19,7 +15,10 @@ def on_esl_event(event):
         elif event_name == "CHANNEL_HANGUP":
             response = event.getHeader("variable_current_application_response")
             hangup_cause = event.getHeader("Hangup-Cause")
-            print(f"User hung up, caller: {caller_number}, callee: {callee_number}, response: {response}, hangup cause: {hangup_cause}")
+            print(f"User hung up, caller: {caller_number}, "
+                  f"callee: {callee_number}, response: {response}, "
+                  f"hangup cause: {hangup_cause}")
+
 
 def main():
     con = ESL.ESLconnection("192.168.1.4", "8022", "ClueCon")
@@ -33,6 +32,7 @@ def main():
         event = con.recvEvent()
         if event:
             on_esl_event(event)
+
 
 if __name__ == "__main__":
     main()

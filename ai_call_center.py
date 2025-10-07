@@ -497,7 +497,7 @@ class AICallCenter:
         )
 
         wavs = self.chat.infer(reply,
-                               stream=True,
+                               stream=False,
                                skip_refine_text=True,  # 跳过润色，加快推理
                                max_split_batch=8,  # 并行批次加大
                                params_infer_code=params_infer_code)

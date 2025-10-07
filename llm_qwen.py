@@ -27,7 +27,7 @@ def _build_headers(api_key: str) -> Dict[str, str]:
     }
 
 
-def generate_reply(user_text: str, system_prompt: Optional[str] = '返回50个字以内的简短回答',
+def generate_reply(user_text: str, system_prompt: Optional[str] = '返回100个字以内的简短回答',
                    model: Optional[str] = None, timeout: float = 15.0) -> Optional[str]:
     """
     调用 Qwen 接口，根据识别文本生成回复
